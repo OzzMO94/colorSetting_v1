@@ -23,29 +23,51 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLabel.text = String(redSlider.value)
-        greenLabel.text = String(greenSlider.value)
-        blueLabel.text = String(blueSlider.value)
+        redLabel.text = String(format: "%.2f", redSlider.value)
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        blueLabel.text = String(format: "%.2f", blueSlider.value)
         
         setColor()
-        
+        setValue(for: redLabel, greenLabel, blueLabel)
     }
 
-    @IBAction func sliderAction() {
-        
-        redLabel.text = String(round(100 * (redSlider.value)) / 100)
-        greenLabel.text = String(round(100 * (greenSlider.value)) / 100)
-        blueLabel.text = String(round(100 * (blueSlider.value)) / 100)
+    @IBAction func sliderAction(_ sender: UISlider) {
+
+        switch sender {
+        case redSlider: setValue(for: redLabel)
+        case greenSlider: setValue(for: greenLabel)
+        default: setValue(for: blueLabel)
+        }
         
         setColor()
-        
     }
     
     private func setColor() {
-        colorView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
-                                            green: CGFloat(greenSlider.value),
-                                            blue: CGFloat(blueSlider.value), alpha: 1)
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
     
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
+}
+
+extension ViewController {
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redLabel:
+                label.text = string(from: redSlider)
+            case greenLabel:
+                label.text = string(from: greenSlider)
+            default:
+                label.text = string(from: blueSlider)
+            }
+        }
+    }
 }
 

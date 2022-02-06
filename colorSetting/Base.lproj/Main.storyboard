@@ -89,20 +89,20 @@
                                         <rect key="frame" x="-2" y="0.0" width="218" height="31"/>
                                         <color key="minimumTrackTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="onz-bY-xfT"/>
+                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="kWR-nb-25O"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NkN-H2-Pbe">
                                         <rect key="frame" x="-2" y="60" width="218" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="ugh-k0-UXw"/>
+                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="eLI-Sv-bbM"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g3Z-rm-Ea6">
                                         <rect key="frame" x="-2" y="120" width="218" height="31"/>
                                         <connections>
-                                            <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="Ldw-Vz-W9D"/>
+                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="W6w-5y-MMo"/>
                                         </connections>
                                     </slider>
                                 </subviews>
